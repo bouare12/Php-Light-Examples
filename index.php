@@ -19,6 +19,12 @@
     <script type="text/javascript" src="web/bundles/PropertiesBundle/scripts/House/house.js"></script>
     <script type="text/javascript" src="web/bundles/PropertiesBundle/scripts/config/routing.js"></script>
     <script type="text/javascript" src="web/bundles/PropertiesBundle/scripts/controller/HouseNewController.js"></script>
+
+    <script src="web/bundles/UserBundle/scripts/client.js"></script>
+    <script src="web/bundles/UserBundle/scripts/config/routing.js"></script>
+    <script src="web/bundles/UserBundle/scripts/controller/EditClientController.js"></script>
+    <script src="web/bundles/UserBundle/scripts/controller/ListClientController.js"></script>
+    <script src="web/bundles/UserBundle/scripts/controller/NewClientController.js"></script>
 </head>
 <body>
 <ng-view></ng-view>

@@ -22,6 +22,7 @@ class UserRepository
 
         return new User($userData);
     }
+    
     public function create(User $user)
     {
         $db = (new DB())->connect();
