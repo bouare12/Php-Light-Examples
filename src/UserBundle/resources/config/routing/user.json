@@ -1,19 +1,9 @@
 {
   "route": {
     "user_new": {
-      "path": "/user/new",
-      "controller": "UserBundle\\Controller\\User",
-      "action": "new"
-    },
-    "user_list": {
-      "path": "/user/list",
-      "controller": "UserBundle\\Controller\\UserController",
-      "action": "list"
-    },
-    "user_edit": {
-      "path": "/user/edit/{id}",
-      "controller": "UserBundle\\Controller\\UserController",
-      "action": "edit"
-    }
-  }
+    "path": "/user/new",
+    "controller": "UserBundle\\Controller\\User",
+    "action": "new"
+   }
+ }
 }

@@ -1,0 +1,16 @@
+<form name="form" id="form" ng-submit="create(user)" enctype="multipart/form-data" method="POST">
+    <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" name="name" id="name" ng-model="user.name">
+    </div>
+    <div class="form-group">
+        <label for="email">email</label>
+        <input type="text" name="email" id="email" ng-model="user.email">
+    </div>
+
+    <input type="submit" class="btn btn-primary">
+</form>
+
+<pre>
+    {{ user }}
+</pre>
