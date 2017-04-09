@@ -37,5 +37,27 @@ class UserController extends Controller
             "message" => "Affichage du formulaire"
         ]);
     }
+
+        public function listAction()
+    {
+        $userRepository = new UserRepository();
+        $usersObjects = $userRepository->listAll();
+        $users = [];
+        if ($usersObjects) {
+            foreach ($usersObjects as $userObject) {
+                $users[] = $userObject->toArray();
+            }
+            return new JsonResponse([
+                "success" => true,
+                "message" => "La liste des utilisateurs est bien affiché",
+                "users" => $users
+            ]);
+        } else {
+            return new JsonResponse([
+                "success" => false,
+                "message" => "Erreur"
+            ]);
+        }
+    }
 }
 

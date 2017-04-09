@@ -24,4 +24,19 @@ class UserRepository
 
         return $query->execute();
     }
+    
+     public function listAll()
+    {
+        $db = new DB();
+        $db = $db->connect();
+        $query = $db->query("SELECT * FROM `user`");
+        $usersArray = $query->fetchAll($db::FETCH_ASSOC);
+        $users = [];
+
+        foreach ($usersArray as $data) {
+            $users[] = new User($data);
+        }
+
+        return $users;
+    }
 }

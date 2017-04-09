@@ -4,6 +4,11 @@
     "path": "/user/new",
     "controller": "UserBundle\\Controller\\User",
     "action": "new"
-   }
+   },
+  "user_list": {
+      "path": "/user/list",
+      "controller": "UserBundle\\Controller\\User",
+      "action": "list"
+    } 
  }
 }

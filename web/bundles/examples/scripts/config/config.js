@@ -10,6 +10,10 @@ examples.config(function($routeProvider) {
             templateUrl: 'web/bundles/examples/templates/new-user.html',
             controller: 'UserController'
         })
+         .when('/user/list/', {
+            templateUrl: 'web/bundles/examples/templates/list.html',
+            controller: 'ListUserController'
+        })
         // .otherwise({
         //     redirectTo: '/error/404'
         // });

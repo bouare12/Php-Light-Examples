@@ -1,0 +1,26 @@
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+  <div class="panel-body">
+    <p>...</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+    	<th> Id </th>
+    	<th> Nom</th>
+    	<th> Email</th>
+    	<th> </th>
+    	<th> </th>
+    </tr>
+    <tr ng-repeat="user in user">
+    	<td>{{ client.id }}</td>
+    	<td>{{ client.name }}</td>
+    	<td>{{ client.email }}</td>
+    	<td><a href="/#!/client/edit/{{user.uniqueId}}"></a></td>
+    	<td><a href=""></a></td>
+    </tr>
+  </table>
+</div>
