@@ -17,7 +17,8 @@
     <script src="web/bundles/examples/examples.js"></script>
     <script src="web/bundles/examples/scripts/config/config.js"></script>
     <script src="web/bundles/examples/scripts/controller/UserController.js"></script>
-     <script src="web/bundles/examples/scripts/controller/ListUserController.js"></script>
+    <script src="web/bundles/examples/scripts/controller/ListUserController.js"></script>
+    <script src="web/bundles/examples/scripts/controller/EditUsertController.js"></script>
     <script src="web/bundles/examples/scripts/controller/DefaultController.js"></script>
 </head>
 <body>

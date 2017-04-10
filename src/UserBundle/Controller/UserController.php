@@ -23,22 +23,22 @@ class UserController extends Controller
                     "success" => true,
                     "message" => "L'utilisateur a bien été ajouté",
                     "user" => $user->toArray()
-                ]);
+                    ]);
             } else {
                 return new JsonResponse([
                     "success" => false,
                     "message" => "Erreur. L'utilisateur n'a pu être ajouter. Vérifier vos droits d'accès ou contacter le support"
-                ]);
+                    ]);
             }
         }
 
         return new JsonResponse([
             "success" => true,
             "message" => "Affichage du formulaire"
-        ]);
+            ]);
     }
 
-        public function listAction()
+    public function listAction()
     {
         $userRepository = new UserRepository();
         $usersObjects = $userRepository->listAll();
@@ -51,13 +51,39 @@ class UserController extends Controller
                 "success" => true,
                 "message" => "La liste des utilisateurs est bien affiché",
                 "users" => $users
-            ]);
+                ]);
         } else {
             return new JsonResponse([
                 "success" => false,
                 "message" => "Erreur"
-            ]);
+                ]);
         }
     }
-}
+
+    public function editAction(Request $request)
+    {
+        $userRepository = new UserRepository();
+        $user = $userRepository->findByUniqueId($request->getGet()["uniqueId"]);
+        if ($request->getMethod() === $request::REQUEST_METHOD_POST) {
+            $newUserName = $request->getPost()["user"]["name"];
+            $newUserEmail = $request->getPost()["user"]["email"];
+            $newUser = $user->setEmail($newUserEmail);
+            $newUser->setName($newUserName);
+            $newUser = $userRepository->update($newUser);
+            if ($newUser) {
+                return new JsonResponse([
+                    "success" => true,
+                    "message" => "L'utilisateur a bien été modifié",
+                    "user" => $newUser->toArray()
+                    ]);
+            } else {
+                return new JsonResponse([
+                    "success" => false,
+                    "message" => "Erreur. L'utilisateur n'a pu être modifier. Vérifier vos droits d'accès ou contacter le support",
+                    "user" => $user
+                    ]);
+            }
+        }
+    }
+}   
 

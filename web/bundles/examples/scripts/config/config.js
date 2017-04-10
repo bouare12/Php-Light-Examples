@@ -14,6 +14,10 @@ examples.config(function($routeProvider) {
             templateUrl: 'web/bundles/examples/templates/list.html',
             controller: 'ListUserController'
         })
+         .when('/user/edit/', {
+            templateUrl: 'web/bundles/examples/templates/edit.html',
+            controller: 'EditUsertController.js'
+        })
         // .otherwise({
         //     redirectTo: '/error/404'
         // });

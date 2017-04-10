@@ -39,4 +39,14 @@ class UserRepository
 
         return $users;
     }
+
+    public function update(User $user)
+    {
+        $db = (new DB())->connect();
+        $query = $db->prepare(" UPDATE `user` SET `name` = '".$user->getName()."', `email` = '".$user->getEmail().
+            "' WHERE `uniqueId` =" . $user->getUniqueId());
+        $query->execute();
+        $newUser = $this->findByUniqueId($user->getUniqueId());
+        return $newUser;
+    }
 }

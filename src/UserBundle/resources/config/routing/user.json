@@ -9,6 +9,11 @@
       "path": "/user/list",
       "controller": "UserBundle\\Controller\\User",
       "action": "list"
+    },
+    "user_edit": {
+      "path": "/user/edit/{id}",
+      "controller": "UserBundle\\Controller\\User",
+      "action": "edit"
     } 
- }
+  }
 }
